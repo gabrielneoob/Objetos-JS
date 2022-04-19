@@ -34,8 +34,8 @@ const bruno = new Pessoa('Bruno', 15);
 // addClass(classe), adiciona a classe a todos os elementos
 // removeClass(classe), remove a classe a todos os elementos
 
-function Dom(element) {
-  this.element = document.querySelectorAll(element);
+function Dom(seletor) {
+  this.element = document.querySelectorAll(seletor);
   this.addClass = function (classe) {
     this.element.forEach((item) => {
       item.classList.add(classe);
