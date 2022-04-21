@@ -23,18 +23,18 @@ const transacoes = [
     valor: 'R$ 49',
   },
 ];
-let taxa = 0;
-let recebimento = 0;
+let somaTaxa = 0;
+let somaRecebimento = 0;
 transacoes.forEach((item) => {
-  item.valor = item.valor.slice(3);
+  const valorModificado = item.valor.slice(3);
   if (item.descricao.includes('Taxa')) {
-    taxa += +item.valor;
+    somaTaxa += +valorModificado;
   } else {
-    recebimento += +item.valor;
+    somaRecebimento += +valorModificado;
   }
 })
-console.log(`Taxa -> R$ ${taxa}`);
-console.log(`Recebimento -> R$ ${recebimento}`);
+console.log(somaTaxa);
+console.log(somaRecebimento);
 
 // Retorne uma array com a lista abaixo
 const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
@@ -48,16 +48,18 @@ const html = `<ul>
                 <li><span>Contato</span></li>
               </ul>`;
 const htmlA = html.replace(/span/g, 'a');
+console.log(htmlA);
+
 
 // Retorne o último caracter da frase
 const frase = 'Melhor do ano!';
-console.log(frase[frase.length - 1]);
-
+const lastCharacterer = frase[frase.length - 1];
 // Retorne o total de taxas
+let totalTaxas = 0;
 const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
-let taxas = 0;
 transacoes2.forEach((item) => {
   if (item.toLocaleLowerCase().includes('taxa')) {
-    taxas += 1;
+    totalTaxas += 1;
   }
 })
+console.log(totalTaxas);
