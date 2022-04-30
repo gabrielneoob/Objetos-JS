@@ -34,7 +34,7 @@ html = html.replace(/div/g, 'li');
 // html = html.join('li');
 
 const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
-const carrosCopia = carros.concat();
+const carrosCopia = carros.slice();
 // Remova o último carro, mas antes de remover
 // salve a array original em outra variável
 carros.pop();
